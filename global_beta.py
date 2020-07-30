@@ -117,5 +117,5 @@ plt.xlim([0,logr10[-1]])
 plt.plot(logr10,np.log10(magf))
 plt.savefig("magf.pdf")
 
-np.savetxt(adafParameters,(blackHoleMass,accRateNorm,s,beta,alpha,j0,delta))
+np.savetxt(adafParameters,(blackHoleMass,accRateNorm,s,beta,alpha,j0,delta,innerRadiusSSD,pIndex))
 np.savetxt(adafFile,np.column_stack([logr,logTi,logTe,logv]),fmt='%7.5f',header=str(np.size(logr)))

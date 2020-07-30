@@ -18,22 +18,22 @@ adafParameters = 'adafParameters.txt'
 # Fix parameters
 coronaFactor = 1.0
 SSDdisk = 1
-pIndex = 1.0
+pIndex = 1.
 correctorAccRate = 0.01
 
 # INITIAL PARAMETERS
 
 blackHoleMass = 1.0e8       # [Msol]
 eddAccRate = eddAccRate * blackHoleMass
-accRateNorm = 1e-1          # [MdotEdd]
+accRateNorm = 1e-2          # [MdotEdd]
 rOut = 1e2                  # [Rs]
 accRateOut = accRateNorm * eddAccRate * coronaFactor
 accRateCD = accRateNorm * eddAccRate
-innerRadiusSSD = 2.0        # [Rs]
+innerRadiusSSD = 30.0        # [Rs]
 
 # Adimensional Disk parameters
 beta = 0.9
-alpha = 0.3
+alpha = 0.1
 delta = 0.1
 s = 0.3
 
