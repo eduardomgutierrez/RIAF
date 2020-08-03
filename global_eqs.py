@@ -307,8 +307,8 @@ def qminus_dermer_fast(r, tempi, tempe, v):
         etaaCD = np.where(etaa > 1.0, etaa - 1.0, 0.0)
         tau_nu = np.sqrt(np.pi)/2.0 * k_nu * h
         fluxxCD = np.where(SSDdisk == 1, np.where(innerRadiusSSD < 3.0, np.where(r < 2.0*innerRadiusSSD*schwRadius, bnuSSD_inner, bnuSSD), bnuSSD), 0.0)
-        fluxx = 2.0*np.pi/np.sqrt(3.0) * bnu * \
-            (1.0-np.exp(-2.0*np.sqrt(3.0)*tau_nu))
+        fluxx = np.where(bnu > 0.0 and tau_nu > 0.0, 2.0*np.pi/np.sqrt(3.0) * bnu * \
+            (1.0-np.exp(-2.0*np.sqrt(3.0)*tau_nu)), 0.0)
         dnu = nu*(np.sqrt(paso)-1.0/np.sqrt(paso))
         sum += (fluxx*etaa + fluxxCD*etaaCD)*dnu
         #sum += fluxx*etaa*dnu
